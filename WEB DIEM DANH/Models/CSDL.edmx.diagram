@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f3f78a6a4284e0c9cd5c5b0d3a5fe90" Name="Diagram1">
+        <EntityTypeShape EntityType="DiemDanhModel.CHITIETDANGNHAP" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.DANGNHAP" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.DANHSACHLOP" Width="1.5" PointX="10.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.DIEMDANHSV" Width="1.5" PointX="15" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.GIANGVIEN" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.HOCKY" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.LICHHOC" Width="1.5" PointX="12.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.LOPMONHOC" Width="1.5" PointX="7.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.LOPSINHVIEN" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.MONHOC" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.NAMHOC" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.PHANQUYEN" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.QUANTRIVIEN" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.SINHVIEN" Width="1.5" PointX="8.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DiemDanhModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="DiemDanhModel.FK__CHITIETDA__IDPHA__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__GIANGVIEN__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__QUANTRIVIEN__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__SINHVIEN__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK_CHITIETDANGNHAP_DANGNHAP" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__DANHSACHL__IDLOP__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__DANHSACHL__IDSIN__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__LICHHOC__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__DIEMDANHSV__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__LOPMONHOC__IDGIA__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__HOCKY__IDNAMHOC__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__LOPMONHOC__IDHOC__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__LOPMONHOC__IDMON__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="DiemDanhModel.FK__SINHVIEN__IDLOPS__35BCFE0A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -9,7 +9,7 @@ namespace WEB_DIEM_DANH.Controllers
 {
     public class NguoiDungController : Controller
     {
-        dbDiemDanhDataContext db = new dbDiemDanhDataContext();
+        DiemDanhEntities db = new DiemDanhEntities();
         public ActionResult Index()
         {
             return View();

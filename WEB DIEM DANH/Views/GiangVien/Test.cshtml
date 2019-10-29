@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WEB_DIEM_DANH.Models.MONHOC>
+
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MAMONHOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TENMONHOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOBUOI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SOTINCHI)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAMONHOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENMONHOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOBUOI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOTINCHI)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDMONHOC }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDMONHOC }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDMONHOC })
+        </td>
+    </tr>
+}
+
+</table>
