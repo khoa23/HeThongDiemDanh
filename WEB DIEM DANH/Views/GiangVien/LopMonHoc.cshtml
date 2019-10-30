@@ -1,15 +1,10 @@
 ﻿@model IEnumerable<WEB_DIEM_DANH.Models.LOPMONHOC>
 
 @{
-    ViewBag.Title = "Test";
+    ViewBag.Title = "LopMonHoc";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Test</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<h2>Lớp môn học</h2>
 <table class="table">
     <tr>
         <th>
@@ -58,6 +53,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.MALOPMH)
+            @Html.ActionLink("Diem Danh", "~/QR", new { id = item.IDLOPMH })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TENLOPMH)
@@ -95,12 +91,13 @@
         <td>
             @Html.DisplayFor(modelItem => item.MONHOC.MAMONHOC)
         </td>
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.IDLOPMH }) |
             @Html.ActionLink("Details", "Details", new { id=item.IDLOPMH }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.IDLOPMH })
-        </td>
+        </td>*@
     </tr>
 }
 
-</table>
+
+

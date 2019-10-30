@@ -22,9 +22,25 @@ namespace WEB_DIEM_DANH.Controllers
             return View(list);
         }
 
-        public ActionResult Test()
+        public ActionResult LopMonHoc(int? id)
         {
-            var list = from s in db.MONHOCs select s;
+            if (id == null)
+            {
+                return HttpNotFound();
+
+            }
+            var list = from s in db.LOPMONHOCs where s.IDMONHOC == id select s;
+            return View(list);
+        }
+
+        public ActionResult Test(int id=2) /////////////////////////////////
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+
+            }
+            var list = from s in db.LOPMONHOCs where s.IDMONHOC == id select s;
             return View(list);
         }
     }
