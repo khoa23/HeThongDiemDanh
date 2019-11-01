@@ -35,6 +35,7 @@ namespace WEB_DIEM_DANH.Controllers
                 return HttpNotFound();
 
             }
+            int? idlopmonhoc = id;
             var list = from s in db.LOPMONHOCs where s.IDMONHOC == id select s;
             return View(list);
         }
