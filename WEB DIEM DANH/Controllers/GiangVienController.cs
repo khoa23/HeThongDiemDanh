@@ -1,9 +1,15 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WEB_DIEM_DANH.Models;
+using System.Drawing;
+using System.IO;
+using System.Drawing.Imaging;
+using ZXing;
+using ZXing.QrCode;
 
 namespace WEB_DIEM_DANH.Controllers
 {
@@ -33,15 +39,5 @@ namespace WEB_DIEM_DANH.Controllers
             return View(list);
         }
 
-        public ActionResult Test(int id=2) /////////////////////////////////
-        {
-            if (id == null)
-            {
-                return HttpNotFound();
-
-            }
-            var list = from s in db.LOPMONHOCs where s.IDMONHOC == id select s;
-            return View(list);
-        }
     }
 }

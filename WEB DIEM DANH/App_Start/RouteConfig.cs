@@ -19,6 +19,8 @@ namespace WEB_DIEM_DANH
                 new { controller = "GiangVien", action = "LopMonHoc" }, new { id = @"\d+" }
             );
 
+            
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

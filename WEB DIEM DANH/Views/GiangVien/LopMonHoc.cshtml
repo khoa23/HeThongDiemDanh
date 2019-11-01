@@ -53,7 +53,8 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.MALOPMH)
-            @Html.ActionLink("Diem Danh", "~/QR", new { id = item.IDLOPMH })
+            <br />
+            @Html.ActionLink("Diem Danh", "DiemDanh/LopMonHoc/QR", new { id = item.IDLOPMH })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TENLOPMH)
