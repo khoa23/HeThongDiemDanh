@@ -56,7 +56,7 @@ namespace WEB_DIEM_DANH.Controllers
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(selectSQL, con);
             SqlDataReader reader;
-
+            //
             try
             {
                 con.Open();
