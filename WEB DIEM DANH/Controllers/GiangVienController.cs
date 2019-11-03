@@ -52,29 +52,16 @@ namespace WEB_DIEM_DANH.Controllers
                 return HttpNotFound();
 
             }
-            string selectSQL = "select s.* from LOPMONHOC l, SINHVIEN s, DANHSACHLOP d where  id = d.IDLOPMH and s.IDSINHVIEN = d.IDSINHVIEN";
-            SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand cmd = new SqlCommand(selectSQL, con);
-            SqlDataReader reader;
-            //
-            try
-            {
-                con.Open();
-                reader = cmd.ExecuteReader();
-                while(reader.Read())
-                {
-                    ListItem newItem = new ListItem();
-                    newItem.Text = reader["MaSoSinhVien"].ToString();
-                    newItem.Text = reader["TenSinhVien"].ToString();
-                    
-                }
-                reader.Close();
-            }
-            finally
-            {
-                con.Close();
-            }
-            return View();
+            //var list = from s in db.DANHSACHLOPs where s.IDLOPMH == id select s;
+            var list = from a in db.SINHVIENs
+                       join d in db.DANHSACHLOPs
+                       on a.IDSINHVIEN equals d.IDSINHVIEN
+
+                       where id == d.IDLOPMH
+                       select a;
+                        
+            //var list1 = from c in db.SINHVIENs where c.IDSINHVIEN ==  select c;
+            return View(list);
         }
 
     }
