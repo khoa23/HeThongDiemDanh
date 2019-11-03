@@ -28,7 +28,7 @@ namespace WEB_DIEM_DANH
             routes.MapRoute(
                 "QR",
                 "GiangVien/DiemDanh/LopMonHoc/QR/{id}",
-                new { controller = "QRCodeGenerator", action = "QR" }, new { id = @"\d+" }
+                new { controller = "GiangVien", action = "QR" }, new { id = @"\d+" }
             );
 
 
