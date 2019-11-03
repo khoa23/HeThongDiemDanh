@@ -19,7 +19,19 @@ namespace WEB_DIEM_DANH
                 new { controller = "GiangVien", action = "LopMonHoc" }, new { id = @"\d+" }
             );
 
-            
+            routes.MapRoute(
+                "Danh sach sv trong lop",
+                "GiangVien/DiemDanh/LopMonHoc/DanhSachLop/{id}",
+                new { controller = "GiangVien", action = "DanhSachLop" }, new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
+                "QR",
+                "GiangVien/DiemDanh/LopMonHoc/QR/{id}",
+                new { controller = "QRCodeGenerator", action = "QR" }, new { id = @"\d+" }
+            );
+
+
 
             routes.MapRoute(
                 name: "Default",

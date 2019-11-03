@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Lớp môn học</h2>
-
+<h2></h2>
 <table class="table">
     <tr>
         <th>
@@ -54,7 +54,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.MALOPMH)
             <br />
-            @Html.ActionLink("Diem Danh", "DiemDanh/LopMonHoc/QR", new { id = item.IDLOPMH })
+            @Html.ActionLink("Điểm danh", "DiemDanh/LopMonHoc/QR", new { id = item.IDLOPMH })
+            <br />
+            @Html.ActionLink("Danh sách lớp", "DiemDanh/LopMonHoc/DanhSachLop", new { id = item.IDLOPMH })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TENLOPMH)
