@@ -29,7 +29,12 @@ namespace WEB_DIEM_DANH.Controllers
         {
             var list = from s in db.MONHOCs select s;
             return View(list);
-            string luuidDiemDanh = Request.AnonymousID.ToString();
+            //string luuidDiemDanh = Request.AnonymousID.ToString();
+        }
+
+        public ActionResult Test()
+        {
+            return View();
         }
 
         public ActionResult LopMonHoc(int? id)
@@ -52,15 +57,21 @@ namespace WEB_DIEM_DANH.Controllers
                 return HttpNotFound();
 
             }
-            //var list = from s in db.DANHSACHLOPs where s.IDLOPMH == id select s;
+            //var list = from s in db.SINHVIENs where s.IDLOPSINHVIEN == id select s;
+            //var list = db.SINHVIENs.OrderBy(a => a.MASOSINHVIEN).ToList();
             var list = from a in db.SINHVIENs
                        join d in db.DANHSACHLOPs
                        on a.IDSINHVIEN equals d.IDSINHVIEN
 
                        where id == d.IDLOPMH
                        select a;
-                        
+            //testEntities dc = new testEntities();
+
+            //    var list = dc.SINHVIEN1.ToList();
+            //return Json(new { data = list }, JsonRequestBehavior.AllowGet);
+
             //var list1 = from c in db.SINHVIENs where c.IDSINHVIEN ==  select c;
+            //return Json(list, JsonRequestBehavior.AllowGet);
             return View(list);
         }
         public ActionResult QR()

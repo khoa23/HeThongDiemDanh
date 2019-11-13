@@ -1,106 +1,48 @@
 ﻿@model IEnumerable<WEB_DIEM_DANH.Models.LOPMONHOC>
-
 @{
     ViewBag.Title = "LopMonHoc";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Lớp môn học</h2>
-<h2></h2>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.MALOPMH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TENLOPMH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NHOMMONHOC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TOTHUCHANH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.THU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SOTIET)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TIETBATDAU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NGAYBATDAU)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NGAYKETTHUC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PHONGHOC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GIANGVIEN.MAGIANGVIEN)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HOCKY.MAHOCKY)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MONHOC.MAMONHOC)
-        </th>
-        <th></th>
-    </tr>
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MALOPMH)
-            <br />
-            @Html.ActionLink("Điểm danh", "DiemDanh/LopMonHoc/QR", new { id = item.IDLOPMH })
-            <br />
-            @Html.ActionLink("Danh sách lớp", "DiemDanh/LopMonHoc/DanhSachLop", new { id = item.IDLOPMH })
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TENLOPMH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NHOMMONHOC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TOTHUCHANH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.THU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SOTIET)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TIETBATDAU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAYBATDAU)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NGAYKETTHUC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PHONGHOC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GIANGVIEN.MAGIANGVIEN)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HOCKY.MAHOCKY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MONHOC.MAMONHOC)
-        </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDLOPMH }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDLOPMH }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDLOPMH })
-        </td>*@
-    </tr>
-}
 
-
+<table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Mã lớp môn học</th>
+            <th>Tên lớp môn học</th>
+            <th>Nhóm môn học</th>
+            <th>Tổ thực hành</th>
+            <th>Thứ</th>
+            <th>Số tiết</th>
+            <th>Tiết bắt đầu</th>
+            <th>Ngày bắt đầu</th>
+            <th>Ngày kết thúc</th>
+            <th>Phòng</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.Raw(item.MALOPMH) </td>
+                <td>@Html.Raw(item.TENLOPMH) </td>
+                <td>@Html.Raw(item.NHOMMONHOC) </td>
+                <td>@Html.Raw(item.TOTHUCHANH) </td>
+                <td>@Html.Raw(item.THU) </td>
+                <td>@Html.Raw(item.SOTIET) </td>
+                <td>@Html.Raw(item.TIETBATDAU) </td>
+                <td>@Html.Raw(item.NGAYBATDAU) </td>
+                <td>@Html.Raw(item.NGAYKETTHUC) </td>
+                <td>@Html.Raw(item.PHONGHOC) </td>
+                <td>
+                    <input type="button" value="Điểm danh" onclick="location.href='/GiangVien/DiemDanh/LopMonHoc/QR/@item.IDLOPMH'">
+                </td>
+                <td>
+                    <input type="button" value="Danh sách" onclick="location.href='/GiangVien/DiemDanh/LopMonHoc/DanhSachLop/@item.IDLOPMH'">
+                </td>
+            </tr>
+            }
+            </tr>
+        </tbody>
+</table>
 

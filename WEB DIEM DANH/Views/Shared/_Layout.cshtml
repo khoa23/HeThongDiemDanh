@@ -5,17 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WEB DIEM DANH</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
 
     <link href="~/Template/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Template/css/datepicker3.css" rel="stylesheet">
+    <link href="~/Template/css/bootstrap-table.css" rel="stylesheet" />
     <link href="~/Template/css/styles.css" rel="stylesheet">
-
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -52,10 +46,10 @@
             </div>
         </form>
         <ul class="nav menu">
-            <li class="active"><a href="index.html"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
-            <li><a href="widgets.html"><span class="glyphicon glyphicon-th"></span> Widgets</a></li>
+            <li class="active"><a href="~/GiangVien/IndexGV"><span class="glyphicon glyphicon-dashboard"></span> Trang chủ</a></li>
+            <li><a href="~/GiangVien/DiemDanh"><span class="glyphicon glyphicon-th"></span> Điểm danh</a></li>
             <li><a href="charts.html"><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
-            <li><a href="tables.html"><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
+            @*<li><a href="@Url.Action("Test", "GiangVien")"><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>*@
             <li><a href="forms.html"><span class="glyphicon glyphicon-pencil"></span> Forms</a></li>
             <li><a href="panels.html"><span class="glyphicon glyphicon-info-sign"></span> Alerts &amp; Panels</a></li>
             <li class="parent ">
@@ -85,7 +79,7 @@
         </ul>
     </div><!--/.sidebar-->
 
-    
+
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
         <div class="row">
             <ol class="breadcrumb">
@@ -97,7 +91,7 @@
         <div class="row">
             <div class="col-lg-12">
                 @RenderBody()
-                
+
             </div>
         </div><!--/.row-->
     </div>
@@ -109,6 +103,8 @@
     <script src="~/Template/js/easypiechart.js"></script>
     <script src="~/Template/js/easypiechart-data.js"></script>
     <script src="~/Template/js/bootstrap-datepicker.js"></script>
+    <script src="~/Template/js/bootstrap-table.js"></script>
+
     <script>
         $('#calendar').datepicker({
         });
