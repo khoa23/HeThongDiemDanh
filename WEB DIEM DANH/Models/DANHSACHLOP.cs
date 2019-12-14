@@ -21,10 +21,10 @@ namespace WEB_DIEM_DANH.Models
         }
     
         public int IDLOPMH { get; set; }
-        public int IDSINHVIEN { get; set; }
+        public int IDNGUOIDUNG { get; set; }
     
         public virtual LOPMONHOC LOPMONHOC { get; set; }
-        public virtual SINHVIEN SINHVIEN { get; set; }
+        public virtual NGUOIDUNG NGUOIDUNG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LICHHOC> LICHHOCs { get; set; }
     }

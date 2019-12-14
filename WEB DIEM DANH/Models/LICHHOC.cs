@@ -25,7 +25,7 @@ namespace WEB_DIEM_DANH.Models
         public int TUANHOC { get; set; }
         public string MAQR { get; set; }
         public int IDLOPMH { get; set; }
-        public int IDSINHVIEN { get; set; }
+        public int IDNGUOIDUNG { get; set; }
     
         public virtual DANHSACHLOP DANHSACHLOP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

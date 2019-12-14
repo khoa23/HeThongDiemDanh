@@ -20,7 +20,7 @@ namespace WEB_DIEM_DANH.Models
             this.HOCKies = new HashSet<HOCKY>();
         }
     
-        public string IDNAMHOC { get; set; }
+        public int IDNAMHOC { get; set; }
         public string MANAMHOC { get; set; }
         public string TENNAMHOC { get; set; }
     

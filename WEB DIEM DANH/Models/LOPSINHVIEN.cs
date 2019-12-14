@@ -17,7 +17,7 @@ namespace WEB_DIEM_DANH.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOPSINHVIEN()
         {
-            this.SINHVIENs = new HashSet<SINHVIEN>();
+            this.NGUOIDUNGs = new HashSet<NGUOIDUNG>();
         }
     
         public int IDLOPSINHVIEN { get; set; }
@@ -25,6 +25,6 @@ namespace WEB_DIEM_DANH.Models
         public string TENLOPSV { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SINHVIEN> SINHVIENs { get; set; }
+        public virtual ICollection<NGUOIDUNG> NGUOIDUNGs { get; set; }
     }
 }

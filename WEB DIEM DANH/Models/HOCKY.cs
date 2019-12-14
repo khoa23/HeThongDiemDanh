@@ -23,7 +23,7 @@ namespace WEB_DIEM_DANH.Models
         public int IDHOCKY { get; set; }
         public string MAHOCKY { get; set; }
         public string TENHOCKY { get; set; }
-        public string IDNAMHOC { get; set; }
+        public int IDNAMHOC { get; set; }
     
         public virtual NAMHOC NAMHOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

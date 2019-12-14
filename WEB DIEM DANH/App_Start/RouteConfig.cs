@@ -14,29 +14,46 @@ namespace WEB_DIEM_DANH
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Hoc ky",
+                "Giangvien/HocKy-{id}",
+                new { controller = "Giangvien", action = "HocKy" }, new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
+                "Mon Hoc",
+                "Giangvien/MonHoc-{id}",
+                new { controller = "Giangvien", action = "MonHoc" }, new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
                 "Lop mon hoc",
-                "GiangVien/DiemDanh/LopMonHoc-{id}",
-                new { controller = "GiangVien", action = "LopMonHoc" }, new { id = @"\d+" }
+                "Giangvien/LopMonHoc-{id}",
+                new { controller = "Giangvien", action = "LopMonHoc" }, new { id = @"\d+" }
             );
 
             routes.MapRoute(
                 "Danh sach sv trong lop",
-                "GiangVien/DiemDanh/LopMonHoc/DanhSachLop/{id}",
-                new { controller = "GiangVien", action = "DanhSachLop" }, new { id = @"\d+" }
+                "Giangvien/DanhSachLop/{id}",
+                new { controller = "Giangvien", action = "DanhSachLop" }, new { id = @"\d+" }
+            );
+
+            routes.MapRoute(
+                "test Danh sach sv trong lop",
+                "Giangvien/test/{id}",
+                new { controller = "Giangvien", action = "test" }, new { id = @"\d+" }
             );
 
             routes.MapRoute(
                 "QR",
-                "GiangVien/DiemDanh/LopMonHoc/QR/{id}",
-                new { controller = "GiangVien", action = "QR" }, new { id = @"\d+" }
+                "Giangvien/QR/{id}",
+                new { controller = "Giangvien", action = "QR" }, new { id = @"\d+" }
             );
-
 
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional }
             );
         }
     }

@@ -17,13 +17,13 @@ namespace WEB_DIEM_DANH.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PHANQUYEN()
         {
-            this.CHITIETDANGNHAPs = new HashSet<CHITIETDANGNHAP>();
+            this.NGUOIDUNGs = new HashSet<NGUOIDUNG>();
         }
     
         public int IDPHANQUYEN { get; set; }
         public string TENQUYEN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CHITIETDANGNHAP> CHITIETDANGNHAPs { get; set; }
+        public virtual ICollection<NGUOIDUNG> NGUOIDUNGs { get; set; }
     }
 }

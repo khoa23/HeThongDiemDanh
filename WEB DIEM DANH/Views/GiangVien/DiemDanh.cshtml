@@ -1,34 +1,91 @@
 ﻿@model IEnumerable<WEB_DIEM_DANH.Models.MONHOC>
-@{
-    ViewBag.Title = "DiemDanh";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<table id="example" class="table table-striped table-bordered nowrap" style="width:100%">
-    <thead>
-        <tr>
-            <th>STT</th>
-            <th>Mã môn học</th>
-            <th>Tên môn học</th>
-            <th>Số buổi</th>
-            <th>Số tín chỉ</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>@Html.Raw(item.IDMONHOC) </td>
-                <td>@Html.Raw(item.MAMONHOC) </td>
-                <td>@Html.Raw(item.TENMONHOC) </td>
-                <td>@Html.Raw(item.SOBUOI) </td>
-                <td>@Html.Raw(item.SOTINCHI) </td>
-                <td>
-                    <input type="button" value="Chọn" onclick="location.href='/GiangVien/DiemDanh/LopMonHoc-@item.IDMONHOC'">
-                </td>
-            </tr>
+    @{
+        ViewBag.Title = "DiemDanh";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IndexGV</title>
+        <style>
+            .breadcrumb {
+                display: none;
             }
-            </tr>
-        </tbody>
-    </table>
+
+            div {
+                margin: auto 350px auto auto;
+            }
+
+            p {
+                margin: 60px 0px auto 0px;
+            }
+
+            body {
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+            }
+
+            .topnav {
+                width: 100%;
+                overflow: hidden;
+                background-color: #333;
+                position: fixed;
+            }
+
+                .topnav a {
+                    float: left;
+                    color: #f2f2f2;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                    font-size: 17px;
+                }
+
+                    .topnav a:hover {
+                        background-color: #ddd;
+                        color: black;
+                    }
+
+                    .topnav a.active {
+                        background-color: #4CAF50;
+                        color: white;
+                    }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="~/GiangVien/IndexGV">Trang chủ</a>
+            <a class="active" href="~/GiangVien/DiemDanh">Điểm danh</a>
+            <a href="#thoikhoabieu">Thời khóa biểu</a>
+            <a href="#about">Giới thiệu</a>
+        </div>
+        <div style="padding-left:16px">
+            <p>
+                <div style="padding-bottom:16px"></div>
+            </p>
+            <h2>Danh sách môn</h2>
+            <p>
+                <table class="table">
+                    <div class="list-item">
+                        @foreach (var item in Model)
+                        {
+                            <div class="item">
+                                <div class="header">
+                                    <a href="/GiangVien/DiemDanh/LopMonHoc-@item.IDMONHOC" title="">
+                                        <span>
+                                            @Html.Raw(item.TENMONHOC)
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </table>
+            </p>
+        </div>
+    </body>
+</html>
+
 

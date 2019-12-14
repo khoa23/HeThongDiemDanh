@@ -1,0 +1,37 @@
+﻿@model IEnumerable<WEB_DIEM_DANH.Models.NAMHOC>
+@{
+    ViewBag.Title = "NamHoc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3>Danh sách năm học</h3>
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Năm học</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    <a href="/GiangVien/HocKy-@item.IDNAMHOC">
+                        <span>
+                            @Html.Raw(item.TENNAMHOC)
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>STT</th>
+            <th>Năm học</th>
+        </tr>
+    </tfoot>
+</table>
+

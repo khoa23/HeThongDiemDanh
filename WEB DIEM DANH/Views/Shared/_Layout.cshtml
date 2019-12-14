@@ -1,16 +1,18 @@
-﻿
+﻿@{
+    Layout = null;
+    if (Session["IDNGUOIDUNG"] == null)
+    {
+        Response.Redirect("~/Account/Login");
+    }
+}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>WEB DIEM DANH</title>
-
-    <link href="~/Template/css/bootstrap.min.css" rel="stylesheet">
-    <link href="~/Template/css/datepicker3.css" rel="stylesheet">
-    <link href="~/Template/css/bootstrap-table.css" rel="stylesheet" />
-    <link href="~/Template/css/styles.css" rel="stylesheet">
-
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 
 <body>
@@ -26,11 +28,10 @@
                 <a class="navbar-brand" href="#"><span>Web </span>Điểm danh</a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>User Name : @Session["TENDANGNHAP"].ToString()<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            <li><a href="@Url.Action("ThongTinGV","Giangvien")" title=""><span class="glyphicon glyphicon-cog"></span>Thông tin giảng viên</a></li>
+                            <li><a href="@Url.Action("LogOut","Account")" title=""><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -38,94 +39,118 @@
 
         </div><!-- /.container-fluid -->
     </nav>
-
-    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
-        <form role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-            </div>
-        </form>
-        <ul class="nav menu">
-            <li class="active"><a href="~/GiangVien/IndexGV"><span class="glyphicon glyphicon-dashboard"></span> Trang chủ</a></li>
-            <li><a href="~/GiangVien/DiemDanh"><span class="glyphicon glyphicon-th"></span> Điểm danh</a></li>
-            <li><a href="charts.html"><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
-            @*<li><a href="@Url.Action("Test", "GiangVien")"><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>*@
-            <li><a href="forms.html"><span class="glyphicon glyphicon-pencil"></span> Forms</a></li>
-            <li><a href="panels.html"><span class="glyphicon glyphicon-info-sign"></span> Alerts &amp; Panels</a></li>
-            <li class="parent ">
-                <a href="#">
-                    <span class="glyphicon glyphicon-list"></span> Dropdown <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
-                </a>
-                <ul class="children collapse" id="sub-item-1">
-                    <li>
-                        <a class="" href="#">
-                            <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="#">
-                            <span class="glyphicon glyphicon-share-alt"></span> Sub Item 2
-                        </a>
-                    </li>
-                    <li>
-                        <a class="" href="#">
-                            <span class="glyphicon glyphicon-share-alt"></span> Sub Item 3
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li role="presentation" class="divider"></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-user"></span> Login Page</a></li>
-        </ul>
-    </div><!--/.sidebar-->
-
-
-    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-        <div class="row">
+    <div class="container" style="margin-top:2em; margin-bottom:2em;">
+        <div class="col-md-3">
+            <form role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+            <ul class="nav menu">
+                <li class="active"><a href="~/Giangvien/Index"><span class="glyphicon glyphicon-th"></span> Trang chủ</a></li>
+                <li><a href="~/Giangvien/NamHoc"><span class="glyphicon glyphicon-pencil"></span> Điểm danh</a></li>
+                <li><a href="~/Giangvien/NamHoc"><span class="glyphicon glyphicon-pencil"></span> Danh sách lớp</a></li>
+                <li class="parent ">
+                    @*<a href="#">
+                            <span class="glyphicon glyphicon-list"></span> Trình trạng học tập <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+                        </a>*@
+                    <ul class="children collapse" id="sub-item-1">
+                        <li>
+                            <a class="" href="#">
+                                <span class="glyphicon glyphicon-share-alt"></span> Sub Item 1
+                            </a>
+                        </li>
+                        <li>
+                            <a class="" href="#">
+                                <span class="glyphicon glyphicon-share-alt"></span> Sub Item 2
+                            </a>
+                        </li>
+                        <li>
+                            <a class="" href="#">
+                                <span class="glyphicon glyphicon-share-alt"></span> Sub Item 3
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li role="presentation" class="divider"></li>
+            </ul>
+        </div><!--/.sidebar-->
+        <div class="col-md-9">
             <ol class="breadcrumb">
                 <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
                 <li class="active">Home</li>
             </ol>
-        </div><!--/.row-->
 
-        <div class="row">
-            <div class="col-lg-12">
+            <div class="row">
+
                 @RenderBody()
-
-            </div>
-        </div><!--/.row-->
+            </div><!--/.row-->
+        </div>
     </div>
 
-    <script src="~/Template/js/jquery-1.11.1.min.js"></script>
-    <script src="~/Template/js/bootstrap.min.js"></script>
-    <script src="~/Template/js/chart.min.js"></script>
-    <script src="~/Template/js/chart-data.js"></script>
-    <script src="~/Template/js/easypiechart.js"></script>
-    <script src="~/Template/js/easypiechart-data.js"></script>
-    <script src="~/Template/js/bootstrap-datepicker.js"></script>
-    <script src="~/Template/js/bootstrap-table.js"></script>
 
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
     <script>
         $('#calendar').datepicker({
         });
-
         !function ($) {
             $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
                 $(this).find('em:first').toggleClass("glyphicon-minus");
             });
             $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
         }(window.jQuery);
-
         $(window).on('resize', function () {
             if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
         })
         $(window).on('resize', function () {
             if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
         })
-    </script>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
+        //check box diem danh
+        function BClick() {
+            $('input:checkbox').prop("checked", false);
+            table
+                .clear()
+                .draw();
+        }
 
+    </script>
+
+    <script>
+        //stt tự tăng
+        $(document).ready(function () {
+            var t = $('#example').DataTable({
+                "columnDefs": [{
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                }],
+                "order": [[1, 'asc']]
+            });
+            t.on('order.dt search.dt', function () {
+                t.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+                    cell.innerHTML = i + 1;
+                });
+            }).draw();
+        });
+    </script>
+</body>
 </html>
+
+
+<script src="~/TeamplateMain/js/jquery-3.3.1.js"></script>
+<script src="~/TeamplateMain/js/jquery.dataTables.min.js"></script>
+<script src="~/TeamplateMain/js/dataTables.bootstrap.min.js"></script>
+<script src="~/TeamplateMain/js/dataTables.fixedHeader.min.js"></script>
+<script src="~/TeamplateMain/js/dataTables.responsive.min.js"></script>
+<script src="~/TeamplateMain/js/responsive.bootstrap.min.js"></script>
+
+<link href="~/TeamplateMain/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/TeamplateMain/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="~/TeamplateMain/css/fixedHeader.bootstrap.min.css" rel="stylesheet" />
+<link href="~/TeamplateMain/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<link href="~/TeamplateMain/css/datepicker3.css" rel="stylesheet" />
+<link href="~/TeamplateMain/css/styles.css" rel="stylesheet" />
+<link href="~/TeamplateMain/css/jquery.dataTables.min.css" rel="stylesheet" />
