@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
@@ -194,7 +195,15 @@ namespace WEB_DIEM_DANH.Controllers
                        where id == dd.IDLOPMH
                        select new DanhSachDiemDanh
                        { nguoidung = n, diemdanhsv = dd };
+            //
+            
+            //
+
+
+
             return View(list);
         }
+        
+
     }
 }
